@@ -1,61 +1,116 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title> Formulario_PF.pdf </title>
-	<meta charset="utf-8">
-	<script type="text/javascript" src="#"></script>
-	<link rel="stylesheet" type="text/css" href="css/form.css">
-</head>
-<body>
-	<div>
-		<form>
-			<h1>Formulário de solicitação de informação(Pessoa Física)</h1>
-			<fieldset>
-				<legend>As informações abaixo são obrigatorias</legend>
-				<label>Nome:<input type="text" name="nome" placeholder="Digite seu nome aqui."></label><br>
-				<label>CPF:<input type="text" name="cpf"></label>
-				<p>Ou, se preferir, informar outro documento de identificação (RG, CNH, Passaporte, RNE ou outro documento válido. Se a opção for por RG, indicar órgão emissor e UF):</p>
-				Tipo de documento:<input type="text" name="tipo de documento">Nº:<input type="text" name="n"><br>
-				Endereço eletrônico (e-mail):<input type="email" name="email"><br>
-				ou<br>
-				Endereço fisico (Rua, nº, complemento, Bairro):<br>
-				<input type="text" name="Endereco"><br>
-				Cidade:<input type="text" name="cidade">
-				Estado:<input type="text" name="estado">
-				UF:<input type="text" name="uf"><br>
-				CEP:<input type="text" name="cep">
-				País:<input type="text" name="pais"><br>
-			</fieldset>
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title> Formulario_PF.pdf </title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/form.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/form.css">
+	</head>
+		<body>
+		<div>
+			<form>
+				<h1>Formulário de solicitação de informação(Pessoa Física)</h1>
+				<fieldset>
+					<legend>
+						As informações abaixo são obrigatorias
+					</legend>
+					<p>
+						<label>
+							Nome:<input class="inputNome" type="text" name="nome" placeholder="Digite seu nome aqui.">
+						</label>
+						<br>
+					</p>
+					<label>
+						<CPF:<input class="inputCpf" type="text" name="cpf">
 
-			<fieldset>
-				<legend>Os campos a seguir são opcionais e se preenchidos contribuirão para a melhoria de nossos serviços </legend>
-				Sexo: Masculino<input type="radio" name="sexo" value="Masculino">
-				Feminino<input type="radio" name="sexo" value="Feminino">
-				Data de nascimento:<input type="date" name="dataNasc"><br>
-				Escolaridade
-				<input type="radio" name="escolaridade" value="semInstrucaoFormal">Sem instrução formal<input type="radio" name="escolaridade" value="ensinoSuperio">Ensino Superior<input type="radio" name="escolaridade" value="doutorado">Doutorado<br>
-				<input type="radio" name="escolaridade" value="ensinoFundamental"> Ensino Fundamental<input type="radio" name="escolaridade" value="especializacao">Especialização<br>
-				<input type="radio" name="escolaridade"
-				value="ensinoMedio">Ensino Médio<input type="radio" name="escolaridade" value="mestrado">Mestrado<br>
-				Ocupação principal / Profissão<br>
-				<input type="radio" name="profissao" value="setorPrivado">Empregado - setor privado<input type="radio" name="profissao" value="pesquisador">Pesquisador<input type="radio" name="profissao" value="setorPublico"> Servidor público estadual<br>
-				<input type="radio" name="profissao" value="jornalista">Jornalista<input type="radio" name="profissao" value="professor">Professor<input type="radio" name="profissao" value="sevidorMunicipal"> Servidor público municipal<br>
-				<input type="radio" name="profissao" value="menbroPartido"> Membro de partido político<input type="radio" name="profissao" value="estudante">Estudante<input type="radio" name="profissao" value="menbroOngNacional">Membro de ONG nacional<input type="radio" name="profissao" value="representanteSindical">Representante sindical<input type="radio" name="profissao" value="empresario"> Empresário/empreendedor<input type="radio" name="profissao" value="menbroOngInternacional">Membro de ONG internacional<br>
-				<input type="radio" name="profissao" value="ProfisLiberal">Profis. Liberal/autônomo<input type="radio" name="profissao" value="sevidorFederal"> Servidor público federal<br>
-				<input type="radio" name="profissao" value="outras">Outras<br>
- 				Telefone:<input type="text" name="telefone">
-			</fieldset>
 
-			<fieldset>
-				<legend>Especificação do pedido de acesso à informação</legend>
-				Órgão/Entidade destinatário do pedido:<br>
-				<input type="text" name="orgaoPedido"><br>
-				Forma preferencial de recebimento da resposta<br>
-				<input type="radio" name="forma" value="consultaPessoal">Buscar/Consultar pessoalmente <input type="radio" name="forma" value="email2">E-mail<input type="radio" name="forma" value="carta">Por carta (com custo)<br>
-				Especificação do pedido<br>
-				<textarea name="especificacao" rows="10" cols="36"></textarea>
-			</fieldset>
-		</form>
-	</div>
-</body>
-</html>
+
+
+
+
+							<div class="clslabelSit clsLeft"><label for="txtCPF" title="Informe os onze dígitos do número do CPF.">CPF:</label></div>
+							<div class="clsLeft"><input type="text" name="txtCPF" id="txtCPF" size="18" maxlength="14" autofocus title="Informe os onze dígitos do número do CPF." 
+							onkeypress="javascript: return EntradaNumerico(event);" onfocus="javascript: RemoveMask('txtCPF');" onblur="javascript: FG_FormatarCPF('txtCPF');" autocomplete="off" value=""/></div>
+
+
+
+
+
+
+
+					</label>
+					<p>
+						Ou, se preferir, informar outro documento de identificação (RG, CNH, Passaporte, RNE ou outro documento válido. Se a opção for por RG, indicar órgão emissor e UF):
+					</p>
+					<p>
+						<label>
+							Tipo de documento:<input class="inputTDoc" type="text" name="tipo de documento">
+						</label>
+						<label>
+							Nº:<input class="inputN" type="text" name="n">
+						</label>
+					</p>
+					<label>
+						Endereço eletrônico (e-mail):<input class="inputEmail"type="email" name="email">
+					</label>
+					<p>ou</p>
+					<label>
+						Endereço fisico (Rua, nº, complemento, Bairro):<br>
+						<input class="inputEndFisico" type="text" name="Endereco">
+				    </label>
+				    <br>
+					<p>
+						<label>
+							Cidade:<input class="inputCidade" type="text" name="cidade">
+						</label>
+						<label>
+							Estado:<input class="inputEstado" type="text" name="estado">
+						</label>
+						<label>
+							UF:<input class="inputUf" type="text" name="uf">
+						</label>
+					</p>
+					<p>
+						<label>
+							CEP:<input class="inputCep" type="text" name="cep">
+						</label>
+						<label>
+							País:<input class="inputPais" type="text" name="pais">
+						</label>
+					</p>
+				</fieldset>
+
+				<fieldset>
+					<legend>Os campos a seguir são opcionais e se preenchidos contribuirão para a melhoria de nossos serviços </legend>
+					Sexo:<label>Masculino<input type="radio" name="sexo" value="Masculino"></label>
+					Feminino<input type="radio" name="sexo" value="Feminino">
+					Data de nascimento:<input type="date" name="dataNasc"><br>
+					Escolaridade
+					<input type="radio" name="escolaridade" value="semInstrucaoFormal">Sem instrução formal<input type="radio" name="escolaridade" value="ensinoSuperio">Ensino Superior<input type="radio" name="escolaridade" value="doutorado">Doutorado<br>
+					<input type="radio" name="escolaridade" value="ensinoFundamental"> Ensino Fundamental<input type="radio" name="escolaridade" value="especializacao">Especialização<br>
+					<input type="radio" name="escolaridade"
+					value="ensinoMedio">Ensino Médio<input type="radio" name="escolaridade" value="mestrado">Mestrado<br>
+					Ocupação principal / Profissão<br>
+					<input type="radio" name="profissao" value="setorPrivado">Empregado - setor privado<input type="radio" name="profissao" value="pesquisador">Pesquisador<input type="radio" name="profissao" value="setorPublico"> Servidor público estadual<br>
+					<input type="radio" name="profissao" value="jornalista">Jornalista<input type="radio" name="profissao" value="professor">Professor<input type="radio" name="profissao" value="sevidorMunicipal"> Servidor público municipal<br>
+					<input type="radio" name="profissao" value="menbroPartido"> Membro de partido político<input type="radio" name="profissao" value="estudante">Estudante<input type="radio" name="profissao" value="menbroOngNacional">Membro de ONG nacional<input type="radio" name="profissao" value="representanteSindical">Representante sindical<input type="radio" name="profissao" value="empresario"> Empresário/empreendedor<input type="radio" name="profissao" value="menbroOngInternacional">Membro de ONG internacional<br>
+					<input type="radio" name="profissao" value="ProfisLiberal">Profis. Liberal/autônomo<input type="radio" name="profissao" value="sevidorFederal"> Servidor público federal<br>
+					<input type="radio" name="profissao" value="outras">Outras<br>
+	 				Telefone:<input type="text" name="telefone">
+				</fieldset>
+
+				<fieldset>
+					<legend>Especificação do pedido de acesso à informação</legend>
+					Órgão/Entidade destinatário do pedido:<br>
+					<input type="text" name="orgaoPedido"><br>
+					Forma preferencial de recebimento da resposta<br>
+					<input type="radio" name="forma" value="consultaPessoal">Buscar/Consultar pessoalmente <input type="radio" name="forma" value="email2">E-mail<input type="radio" name="forma" value="carta">Por carta (com custo)<br>
+					Especificação do pedido<br>
+					<textarea name="especificacao" rows="10" cols="36"></textarea>
+				</fieldset>
+
+				<p><input type="submit" value="Enviar" name="btnEnviar">
+			</form>
+		</div>
+	</body>
+	</html>
